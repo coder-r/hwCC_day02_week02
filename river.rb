@@ -2,19 +2,22 @@
 #
 # A river should hold many fish
 require_relative("fish")
+
 class River
 
-  def initialize(name, fish_stock)
+  attr_reader :name
+
+  def initialize(name, fish)
     @name = name
-    @fish_stock = fish_stock
+    @fish = fish
   end
 
   def fish_count()
-    return @fish_stock.count
+    return @fish.count()
   end
 
-  def lose_fish()
-    @fish_stock.pop
+  def supply_fish()
+    return @fish.shift()
   end
 
 end
